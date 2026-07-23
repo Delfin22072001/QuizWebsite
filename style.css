@@ -83,7 +83,7 @@ p, li{
   background-color:#7012c7;
 }
 
-#playagain-btn{
+#playagain-btn, #previous-btn{
   display: none;
 }
 
