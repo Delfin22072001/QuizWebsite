@@ -17,7 +17,6 @@ const div = document.getElementById('options')
 const ans = document.getElementById('answer')
 const progress_bar = document.getElementById('progress-bar')
 const play_again = document.getElementById('playagain-btn')
-const previous = document.getElementById('previous-btn')
 
 let index = 0
 let score = 0
@@ -46,7 +45,8 @@ function displayQuestion() {
 
 displayQuestion()
 
-// next question
+
+// next button
 nxt_btn.addEventListener('click', () => {
 
   const selected = document.querySelector('input[name="option"]:checked')
@@ -62,10 +62,14 @@ nxt_btn.addEventListener('click', () => {
   }
   index++
 
+  if (index == 9) {
+    nxt_btn.textContent = "Submit"
+  }
 
   if (index < 10) {
     displayQuestion()
   }
+
 
   else {
     qn.textContent = "Quiz Completed"
@@ -77,6 +81,7 @@ nxt_btn.addEventListener('click', () => {
   }
 })
 
+
 // play again
 play_again.addEventListener('click', () => {
   index = 0
@@ -86,6 +91,8 @@ play_again.addEventListener('click', () => {
   ans.innerHTML = ""
   displayQuestion()
 })
+
+
 
 
 
